@@ -1,0 +1,58 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Pseudoclase -> es una especie de selector */
+
+ul li {
+    font-size: 20px;
+}
+
+ul li:first-child {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+/* Selecciona a un numero de la lista para modificar */
+ul li:nth-child(3){
+    color: orangered;
+    font-weight: bold;
+}
+
+ul li:last-child{
+    color: blue;
+    font-weight: bold;
+}
+
+#mi-enlace{
+    font-size: 30px;
+    color: lightblue;
+}
+
+#mi-enlace:link{
+    color: red;
+}
+
+#mi-enlace:visited{
+    color: orangered;
+}
+
+/* Cuando pase por "encima" con el mause */
+#mi-enlace:hover{
+    color: blue;
+}
+
+/* Mientras yo este "pulsando" haga tal cosa */
+#mi-enlace:active{
+    color: greenyellow;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+input[type="text"]{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+input[type="text"]:focus{
+    border: 4px dashed red;
+}

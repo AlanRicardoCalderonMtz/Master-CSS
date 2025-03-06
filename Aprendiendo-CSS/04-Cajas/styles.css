@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    padding: 40px;
+}
+
+#cajas{
+    max-width: 1020px;
+    border: 1px solid black;
+}
+
+.caja{
+    display: block;
+    width: 250px;
+    height: 250px;
+    background-color: lightblue;
+    border: 5px dashed red;
+    margin: 15px;
+    /* Margen interno -> Padding*/
+    padding: 20px;
+    float: left ;
+}
+
+.caja p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 230px;
+    /*
+    -> Caja mide de alto: 250
+    ---> tamaño del texto: 20
+    ---> Texto se acomode a la mitad: 250 - 20 = (230)*/
+}
+
+.clearfix{
+    /* No se tiene que flotar */
+    float: none;
+    /* Limpiame los flotados - todos (left - right)  */
+    clear: both;
+}
