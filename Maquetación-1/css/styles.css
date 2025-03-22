@@ -1,5 +1,6 @@
 /* Fuentes */
 @font-face {
+    /* Indica el nombre a la fuente */
     font-family: "nevis";
     src: url("fonts/nevis.eot");
     /* Prefijo por si no carga bien en internet 'explorer' */
@@ -20,6 +21,26 @@
 body {
     background-image: url("../img/paven.png");
 }
+
+a{
+    color: #529125;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #529125;
+}
+
+a:hover{
+    color: #285616;
+}
+
+.red{
+    color: #9b2422 !important;
+
+}
+
+
 
 /* Formularios */
 input[type="text"],
@@ -43,6 +64,36 @@ select:focus{
     outline: none; /* Elimina el outline al enfocar el input */
     border: 1px solid #70b231;
     color: black;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button{
+    /* poder manipularlos al gusto */
+    display: block;
+    border-radius: 2px;
+    border: 1px solid green;
+    width: 60px;
+    padding: 3px;
+    color: white;
+    background-color: #70b231;
+    cursor: pointer;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover{
+    box-shadow: 0px 0px 2px gray;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active{
+    box-shadow: 0px 0px 3px gray inset;
+    text-shadow: 0px 0px 1px #ccc;
 }
 
 /* CABECERA */
@@ -121,6 +172,7 @@ select:focus{
 
 /* Estilos -> Enlaces de la lista */
 #nav > ul > li a {
+    /* Para poder modificarlos al gusto */
     display: block;
     padding-left: 20px;
     padding-right: 20px;
@@ -167,6 +219,7 @@ select:focus{
 }
 
 #nav > ul > li:hover > ul > li:hover {
+    /* sombra interior */
     box-shadow: 0px 0px 6px #ccc inset;
 }
 
@@ -174,18 +227,28 @@ select:focus{
 #content{
     width: 1250px;
     min-height: 1100px;
+    /* centrar contenido */
     margin: 0px auto;
 }
 
 /* Barra lateral -> aside */
-#aside{
+#aside, #frase{
+    clear: both;
     width: 200px;
+    /* caja flotada a la izquierda */
     float: left;
     margin: 30px;
     background-color: white;
     border: 1px solid #ccc;
     box-shadow: 0px 2px 2px #ccc;
     font-family: sans-serif, helvetica, Arial;
+}
+
+#frase{
+    width: 180px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: sans-serif;
 }
 
 #aside .widget{
@@ -210,8 +273,46 @@ select:focus{
     text-align: center;
     padding-top: 2px;
     padding-bottom: 2px;
+    margin-bottom: 15px;
     background: #f2f3f2;
     border: 1px solid #ccc;
     border-left: none;
     border-right: none;
+}
+
+/* Formularios - barra lateral */
+#aside div label,
+#aside div input[type="text"],
+#aside div input[type="email"],
+#aside div input[type="password"],
+#aside div a{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#aside div input[type="button"],
+#aside div input[type="submit"],
+#aside div button{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#aside input,
+#aside label{
+    margin: 0px auto;
+    text-align: center;
+}
+
+#aside li{
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    /* para que sea un cuadrado */
+    list-style: square;
+}
+
+#aside .widget:nth-of-type(2) h3 {
+    color: #0c73f2;
 }
