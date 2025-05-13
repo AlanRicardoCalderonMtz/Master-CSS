@@ -87,11 +87,33 @@ body {
     animation-timing-function: linear;
 }
 
+#logo:hover {
+    border-radius: 2px;
+    color: black;
+    background: #ccc;
+}
+
 @keyframes rotate-gear {
     from{
         transform: rotateZ(0deg);
     }to{
         transform: rotateZ(360deg);
+    }
+}
+
+#logo:hover .gear {
+    animation: fromBellow 500ms linear;
+}
+
+@keyframes fromBellow {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(200%);
+    }
+    100% {
+        transform: translateY(0%);
     }
 }
 
@@ -103,6 +125,18 @@ body {
     margin-top: 5px;
     margin-right: 65px;
     transition: all 300ms;
+}
+
+#logo:hover h3 {
+    animation: fromRight 300ms linear;
+}
+
+@keyframes fromRight {
+    from{
+        transform: translateX(200%);
+    }to{
+        transform: translateX(0%);
+    }
 }
 
 #menu {
