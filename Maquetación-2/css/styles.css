@@ -79,7 +79,20 @@ body {
     font-size: 30px;
     margin-top: 8px;
     margin-left: 26px;
+    animation: rotate-gear; 
+    animation-duration: 2s;
+    /* Animación infinita */
+    animation-iteration-count: infinite;
+    /* Animación continua con la misma velocidad */
+    animation-timing-function: linear;
+}
 
+@keyframes rotate-gear {
+    from{
+        transform: rotateZ(0deg);
+    }to{
+        transform: rotateZ(360deg);
+    }
 }
 
 #logo h3 {
