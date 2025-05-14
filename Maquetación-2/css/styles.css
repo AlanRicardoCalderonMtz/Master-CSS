@@ -79,7 +79,7 @@ body {
     font-size: 30px;
     margin-top: 8px;
     margin-left: 26px;
-    animation: rotate-gear; 
+    animation: rotate-gear;
     animation-duration: 2s;
     /* Animación infinita */
     animation-iteration-count: infinite;
@@ -94,9 +94,11 @@ body {
 }
 
 @keyframes rotate-gear {
-    from{
+    from {
         transform: rotateZ(0deg);
-    }to{
+    }
+
+    to {
         transform: rotateZ(360deg);
     }
 }
@@ -109,9 +111,11 @@ body {
     0% {
         transform: translateY(0%);
     }
+
     50% {
         transform: translateY(200%);
     }
+
     100% {
         transform: translateY(0%);
     }
@@ -132,9 +136,11 @@ body {
 }
 
 @keyframes fromRight {
-    from{
+    from {
         transform: translateX(200%);
-    }to{
+    }
+
+    to {
         transform: translateX(0%);
     }
 }
@@ -176,6 +182,18 @@ body {
     background: url("../img/bakbaner.png");
     background-position: -200px -200px;
     margin: 20px auto;
+    overflow: hidden;
+    animation: backbanner 10s linear;
+}
+
+@keyframes backbanner {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -200px -300px;
+    }
 }
 
 #banner h1 {
@@ -188,6 +206,33 @@ body {
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px black;
     margin: 27px auto;
+    animation: showText 10s linear;
+}
+
+@keyframes showText {
+    0% {
+        transform: translateX(-600%) scale(5, 5);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(600%) scale(5, 5);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateX(-600%) scale(5, 5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%) scale(1, 1);
+        text-shadow: 2px 2px 1px black;
+        color: white;
+        opacity: 1;
+    }
 }
 
 /* Tarjetas */
@@ -202,6 +247,11 @@ body {
     margin: 20px;
     margin-top: 40px;
     cursor: pointer;
+    transition: all 300ms;
+}
+
+.card:hover {
+    background: black;
 }
 
 .card:last-child {
@@ -216,6 +266,23 @@ body {
     line-height: 130px;
     text-align: center;
     margin: 0px auto;
+    transition: all 300ms;
+}
+
+.card:hover .icon {
+    font-size: 70px;
+    color: #37bcf9;
+    animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon {
+    from {
+        transform: translateY(-200%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
 }
 
 .card .category {
@@ -226,12 +293,51 @@ body {
     font-weight: bold;
     text-align: center;
     color: #00538c;
+    transition: all 300ms;
+}
+
+.card:hover .category {
+    color: white;
+    /* linear -> tenga siempre la misma velocidad */
+    animation: showCategory 400ms linear;
+}
+
+@keyframes showCategory {
+    from {
+        transform: translateY(-300%);
+        color: black;
+    }
+
+    to {
+        /* Llegar a la posición original */
+        transform: translateY(0%);
+        color: white;
+    }
 }
 
 .card .description {
     font-family: "TrebuchetMS";
     text-align: center;
     color: #0370b9;
+    font-size: 15px;
+    transition: all 300ms;
+}
+
+.card:hover .description {
+    color: white;
+    animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription {
+    from {
+        transform: translateX(-300%);
+        color: black;
+    }
+    to {
+        /* Llegar a la posición original */
+        transform: translateX(0%);
+        color: white;
+    }
 }
 
 /* BARRA LATERAL */
@@ -441,22 +547,22 @@ aside h3:first-child {
     box-shadow: 1px 1px 2px #ddd;
 }
 
-#articles article h4{
+#articles article h4 {
     display: block;
     font-size: 23px;
     margin: 3px;
 }
 
-#articles article h4 a{
+#articles article h4 a {
     text-decoration: none;
     color: #00538c;
 }
 
-#articles article h4 a:hover{
+#articles article h4 a:hover {
     text-decoration: underline;
 }
 
-#articles .data{
+#articles .data {
     float: right;
     background: #393d3f;
     color: white;
@@ -468,24 +574,24 @@ aside h3:first-child {
     border-radius: 0px 0px 0px 5px;
 }
 
-#articles .data span{
+#articles .data span {
     margin: 6px;
 }
 
-#articles article p{
+#articles article p {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
 }
 
-#blog{
+#blog {
     height: 100px;
     margin-top: 60px;
     line-height: 100px;
     text-align: center;
 }
 
-#blog a{
+#blog a {
     display: block;
     text-decoration: none;
     font-family: "BebasNeue";
@@ -504,7 +610,7 @@ aside h3:first-child {
     overflow: hidden;
 }
 
-#footer .wrap > div{
+#footer .wrap>div {
     float: left;
     width: 320px;
     height: 370px;
@@ -514,13 +620,13 @@ aside h3:first-child {
     font-family: "TrebuchetMS";
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: #37bcf9;
     transition: all 300ms;
 }
 
-#footer h5{
+#footer h5 {
     display: block;
     background: url("../img/pxgray.png"), white;
     height: 50px;
@@ -534,25 +640,25 @@ footer a{
     margin-bottom: 15px;
 }
 
-#footer ul{
+#footer ul {
     text-align: left;
     margin: 20px;
     font-size: 25px;
 }
 
-#footer ul li{
+#footer ul li {
     margin-top: 10px;
     /* list-style: none; quita los puntos */
     padding: 5px;
     border-bottom: 1px solid #ccc;
 }
 
-#footer ul li a{
+#footer ul li a {
     display: block;
     height: 40px;
 }
 
-#footer iframe{
+#footer iframe {
     width: 100%;
     height: 300px;
     margin-top: 10px;
@@ -561,10 +667,10 @@ footer a{
     box-shadow: 0px 0px 5px gray;
 }
 
-#footer img{
+#footer img {
     margin-bottom: 15px;
 }
 
-#footer .browsers img{
+#footer .browsers img {
     width: 45px;
 }
